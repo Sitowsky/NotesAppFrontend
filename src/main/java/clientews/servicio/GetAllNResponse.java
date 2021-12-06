@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for getAllResponse complex type.
+ * <p>Java class for getAllNResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getAllResponse">
+ * &lt;complexType name="getAllNResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://interfaces/}user" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://interfaces/}note" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,13 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getAllResponse", propOrder = {
+@XmlType(name = "getAllNResponse", propOrder = {
     "_return"
 })
-public class GetAllResponse {
+public class GetAllNResponse {
 
     @XmlElement(name = "return")
-    protected List<User> _return;
+    protected List<Note> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class GetAllResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link User }
+     * {@link Note }
      * 
      * 
      */
-    public List<User> getReturn() {
+    public List<Note> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<User>();
+            _return = new ArrayList<Note>();
         }
         return this._return;
     }

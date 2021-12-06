@@ -4,22 +4,21 @@
  */
 package com.mycompany.frontend;
 
-import clientews.servicio.*;
+import clientews.servicio.IUserDao;
+import clientews.servicio.User;
+import clientews.servicio.UserDaoService;
 import java.util.List;
 
 /**
  *
  * @author fabri
  */
-public class Pruebas1 {
-
+public class Usuarios {
     public static void main(String[] args) {
-        IUserDao no = new UserDaoService().getUserDaoPort();
-        List l = no.getAll();
-        //Pendiente no se puede convertir el objeto
-        //User u = (User) l.get(0);
+        IUserDao us = new UserDaoService().getUserDaoPort();
+        List l = us.getAll();
 
-        System.out.println(no.getAll());
-
+        User u = (User) l.get(1);
+        System.out.println(u.getEmail());
     }
 }

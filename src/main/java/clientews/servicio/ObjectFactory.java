@@ -123,11 +123,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Note }
+     * Create an instance of {@link User }
      * 
      */
-    public Note createNote() {
-        return new Note();
+    public User createUser() {
+        return new User();
     }
 
     /**

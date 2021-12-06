@@ -38,7 +38,7 @@ public interface IUserDao {
     @Action(input = "http://interfaces/IUserDao/addRequest", output = "http://interfaces/IUserDao/addResponse")
     public boolean add(
         @WebParam(name = "arg0", targetNamespace = "")
-        Note arg0);
+        User arg0);
 
     /**
      * 
@@ -53,7 +53,7 @@ public interface IUserDao {
     @Action(input = "http://interfaces/IUserDao/updateRequest", output = "http://interfaces/IUserDao/updateResponse")
     public boolean update(
         @WebParam(name = "arg0", targetNamespace = "")
-        Note arg0);
+        User arg0);
 
     /**
      * 
@@ -73,14 +73,14 @@ public interface IUserDao {
     /**
      * 
      * @return
-     *     returns java.util.List<clientews.servicio.Note>
+     *     returns java.util.List<clientews.servicio.User>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "getAll", targetNamespace = "http://interfaces/", className = "clientews.servicio.GetAll")
     @ResponseWrapper(localName = "getAllResponse", targetNamespace = "http://interfaces/", className = "clientews.servicio.GetAllResponse")
     @Action(input = "http://interfaces/IUserDao/getAllRequest", output = "http://interfaces/IUserDao/getAllResponse")
-    public List<Note> getAll();
+    public List<User> getAll();
 
     /**
      * 

@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://interfaces/}note" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://interfaces/}user" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,17 +31,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Update {
 
-    protected Note arg0;
+    protected User arg0;
 
     /**
      * Gets the value of the arg0 property.
      * 
      * @return
      *     possible object is
-     *     {@link Note }
+     *     {@link User }
      *     
      */
-    public Note getArg0() {
+    public User getArg0() {
         return arg0;
     }
 
@@ -50,10 +50,10 @@ public class Update {
      * 
      * @param value
      *     allowed object is
-     *     {@link Note }
+     *     {@link User }
      *     
      */
-    public void setArg0(Note value) {
+    public void setArg0(User value) {
         this.arg0 = value;
     }
 

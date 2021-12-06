@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for add complex type.
+ * <p>Java class for updateN complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="add">
+ * &lt;complexType name="updateN">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://interfaces/}user" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://interfaces/}note" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,22 +26,22 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "add", propOrder = {
+@XmlType(name = "updateN", propOrder = {
     "arg0"
 })
-public class Add {
+public class UpdateN {
 
-    protected User arg0;
+    protected Note arg0;
 
     /**
      * Gets the value of the arg0 property.
      * 
      * @return
      *     possible object is
-     *     {@link User }
+     *     {@link Note }
      *     
      */
-    public User getArg0() {
+    public Note getArg0() {
         return arg0;
     }
 
@@ -50,10 +50,10 @@ public class Add {
      * 
      * @param value
      *     allowed object is
-     *     {@link User }
+     *     {@link Note }
      *     
      */
-    public void setArg0(User value) {
+    public void setArg0(Note value) {
         this.arg0 = value;
     }
 

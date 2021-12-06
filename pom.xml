@@ -41,14 +41,14 @@
                         </goals>
                         <configuration>
                             <wsdlUrls>
-                                <wsdlUrl>http://localhost:8080/UserDaoService/UserDao?wsdl</wsdlUrl>
+                                <wsdlUrl>http://desktop-cfan1cq:8080/NoteDaoService/NoteDao?wsdl</wsdlUrl>
                             </wsdlUrls>
                             <packageName>clientews.servicio</packageName>
                             <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>           
         </plugins>
     </build>
 </project>

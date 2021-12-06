@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "UserDaoService", targetNamespace = "http://dao/", wsdlLocation = "http://localhost:8080/UserDaoService/UserDao?wsdl")
+@WebServiceClient(name = "UserDaoService", targetNamespace = "http://dao/", wsdlLocation = "http://desktop-cfan1cq:8080/UserDaoService/UserDao?wsdl")
 public class UserDaoService
     extends Service
 {
@@ -30,7 +30,7 @@ public class UserDaoService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/UserDaoService/UserDao?wsdl");
+            url = new URL("http://desktop-cfan1cq:8080/UserDaoService/UserDao?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

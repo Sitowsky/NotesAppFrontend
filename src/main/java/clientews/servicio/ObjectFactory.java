@@ -24,16 +24,16 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _UpdateResponse_QNAME = new QName("http://interfaces/", "updateResponse");
-    private final static QName _VerifyCredentialsResponse_QNAME = new QName("http://interfaces/", "verifyCredentialsResponse");
-    private final static QName _Delete_QNAME = new QName("http://interfaces/", "delete");
-    private final static QName _Update_QNAME = new QName("http://interfaces/", "update");
-    private final static QName _AddResponse_QNAME = new QName("http://interfaces/", "addResponse");
-    private final static QName _GetAllResponse_QNAME = new QName("http://interfaces/", "getAllResponse");
-    private final static QName _VerifyCredentials_QNAME = new QName("http://interfaces/", "verifyCredentials");
-    private final static QName _DeleteResponse_QNAME = new QName("http://interfaces/", "deleteResponse");
-    private final static QName _GetAll_QNAME = new QName("http://interfaces/", "getAll");
-    private final static QName _Add_QNAME = new QName("http://interfaces/", "add");
+    private final static QName _AddNResponse_QNAME = new QName("http://interfaces/", "addNResponse");
+    private final static QName _GetAllN_QNAME = new QName("http://interfaces/", "getAllN");
+    private final static QName _DeleteNResponse_QNAME = new QName("http://interfaces/", "deleteNResponse");
+    private final static QName _GetAllByUserResponse_QNAME = new QName("http://interfaces/", "getAllByUserResponse");
+    private final static QName _DeleteN_QNAME = new QName("http://interfaces/", "deleteN");
+    private final static QName _UpdateNResponse_QNAME = new QName("http://interfaces/", "updateNResponse");
+    private final static QName _UpdateN_QNAME = new QName("http://interfaces/", "updateN");
+    private final static QName _AddN_QNAME = new QName("http://interfaces/", "addN");
+    private final static QName _GetAllNResponse_QNAME = new QName("http://interfaces/", "getAllNResponse");
+    private final static QName _GetAllByUser_QNAME = new QName("http://interfaces/", "getAllByUser");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: clientews.servicio
@@ -43,181 +43,181 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Add }
+     * Create an instance of {@link AddN }
      * 
      */
-    public Add createAdd() {
-        return new Add();
+    public AddN createAddN() {
+        return new AddN();
     }
 
     /**
-     * Create an instance of {@link GetAll }
+     * Create an instance of {@link GetAllNResponse }
      * 
      */
-    public GetAll createGetAll() {
-        return new GetAll();
+    public GetAllNResponse createGetAllNResponse() {
+        return new GetAllNResponse();
     }
 
     /**
-     * Create an instance of {@link DeleteResponse }
+     * Create an instance of {@link GetAllByUser }
      * 
      */
-    public DeleteResponse createDeleteResponse() {
-        return new DeleteResponse();
+    public GetAllByUser createGetAllByUser() {
+        return new GetAllByUser();
     }
 
     /**
-     * Create an instance of {@link AddResponse }
+     * Create an instance of {@link UpdateN }
      * 
      */
-    public AddResponse createAddResponse() {
-        return new AddResponse();
+    public UpdateN createUpdateN() {
+        return new UpdateN();
     }
 
     /**
-     * Create an instance of {@link GetAllResponse }
+     * Create an instance of {@link UpdateNResponse }
      * 
      */
-    public GetAllResponse createGetAllResponse() {
-        return new GetAllResponse();
+    public UpdateNResponse createUpdateNResponse() {
+        return new UpdateNResponse();
     }
 
     /**
-     * Create an instance of {@link VerifyCredentials }
+     * Create an instance of {@link DeleteN }
      * 
      */
-    public VerifyCredentials createVerifyCredentials() {
-        return new VerifyCredentials();
+    public DeleteN createDeleteN() {
+        return new DeleteN();
     }
 
     /**
-     * Create an instance of {@link Update }
+     * Create an instance of {@link GetAllByUserResponse }
      * 
      */
-    public Update createUpdate() {
-        return new Update();
+    public GetAllByUserResponse createGetAllByUserResponse() {
+        return new GetAllByUserResponse();
     }
 
     /**
-     * Create an instance of {@link Delete }
+     * Create an instance of {@link DeleteNResponse }
      * 
      */
-    public Delete createDelete() {
-        return new Delete();
+    public DeleteNResponse createDeleteNResponse() {
+        return new DeleteNResponse();
     }
 
     /**
-     * Create an instance of {@link UpdateResponse }
+     * Create an instance of {@link AddNResponse }
      * 
      */
-    public UpdateResponse createUpdateResponse() {
-        return new UpdateResponse();
+    public AddNResponse createAddNResponse() {
+        return new AddNResponse();
     }
 
     /**
-     * Create an instance of {@link VerifyCredentialsResponse }
+     * Create an instance of {@link GetAllN }
      * 
      */
-    public VerifyCredentialsResponse createVerifyCredentialsResponse() {
-        return new VerifyCredentialsResponse();
+    public GetAllN createGetAllN() {
+        return new GetAllN();
     }
 
     /**
-     * Create an instance of {@link User }
+     * Create an instance of {@link Note }
      * 
      */
-    public User createUser() {
-        return new User();
+    public Note createNote() {
+        return new Note();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddNResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "updateResponse")
-    public JAXBElement<UpdateResponse> createUpdateResponse(UpdateResponse value) {
-        return new JAXBElement<UpdateResponse>(_UpdateResponse_QNAME, UpdateResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "addNResponse")
+    public JAXBElement<AddNResponse> createAddNResponse(AddNResponse value) {
+        return new JAXBElement<AddNResponse>(_AddNResponse_QNAME, AddNResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VerifyCredentialsResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllN }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "verifyCredentialsResponse")
-    public JAXBElement<VerifyCredentialsResponse> createVerifyCredentialsResponse(VerifyCredentialsResponse value) {
-        return new JAXBElement<VerifyCredentialsResponse>(_VerifyCredentialsResponse_QNAME, VerifyCredentialsResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "getAllN")
+    public JAXBElement<GetAllN> createGetAllN(GetAllN value) {
+        return new JAXBElement<GetAllN>(_GetAllN_QNAME, GetAllN.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Delete }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteNResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "delete")
-    public JAXBElement<Delete> createDelete(Delete value) {
-        return new JAXBElement<Delete>(_Delete_QNAME, Delete.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "deleteNResponse")
+    public JAXBElement<DeleteNResponse> createDeleteNResponse(DeleteNResponse value) {
+        return new JAXBElement<DeleteNResponse>(_DeleteNResponse_QNAME, DeleteNResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Update }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllByUserResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "update")
-    public JAXBElement<Update> createUpdate(Update value) {
-        return new JAXBElement<Update>(_Update_QNAME, Update.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "getAllByUserResponse")
+    public JAXBElement<GetAllByUserResponse> createGetAllByUserResponse(GetAllByUserResponse value) {
+        return new JAXBElement<GetAllByUserResponse>(_GetAllByUserResponse_QNAME, GetAllByUserResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteN }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "addResponse")
-    public JAXBElement<AddResponse> createAddResponse(AddResponse value) {
-        return new JAXBElement<AddResponse>(_AddResponse_QNAME, AddResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "deleteN")
+    public JAXBElement<DeleteN> createDeleteN(DeleteN value) {
+        return new JAXBElement<DeleteN>(_DeleteN_QNAME, DeleteN.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateNResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getAllResponse")
-    public JAXBElement<GetAllResponse> createGetAllResponse(GetAllResponse value) {
-        return new JAXBElement<GetAllResponse>(_GetAllResponse_QNAME, GetAllResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "updateNResponse")
+    public JAXBElement<UpdateNResponse> createUpdateNResponse(UpdateNResponse value) {
+        return new JAXBElement<UpdateNResponse>(_UpdateNResponse_QNAME, UpdateNResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VerifyCredentials }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateN }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "verifyCredentials")
-    public JAXBElement<VerifyCredentials> createVerifyCredentials(VerifyCredentials value) {
-        return new JAXBElement<VerifyCredentials>(_VerifyCredentials_QNAME, VerifyCredentials.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "updateN")
+    public JAXBElement<UpdateN> createUpdateN(UpdateN value) {
+        return new JAXBElement<UpdateN>(_UpdateN_QNAME, UpdateN.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddN }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "deleteResponse")
-    public JAXBElement<DeleteResponse> createDeleteResponse(DeleteResponse value) {
-        return new JAXBElement<DeleteResponse>(_DeleteResponse_QNAME, DeleteResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "addN")
+    public JAXBElement<AddN> createAddN(AddN value) {
+        return new JAXBElement<AddN>(_AddN_QNAME, AddN.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAll }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllNResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "getAll")
-    public JAXBElement<GetAll> createGetAll(GetAll value) {
-        return new JAXBElement<GetAll>(_GetAll_QNAME, GetAll.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "getAllNResponse")
+    public JAXBElement<GetAllNResponse> createGetAllNResponse(GetAllNResponse value) {
+        return new JAXBElement<GetAllNResponse>(_GetAllNResponse_QNAME, GetAllNResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Add }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllByUser }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://interfaces/", name = "add")
-    public JAXBElement<Add> createAdd(Add value) {
-        return new JAXBElement<Add>(_Add_QNAME, Add.class, null, value);
+    @XmlElementDecl(namespace = "http://interfaces/", name = "getAllByUser")
+    public JAXBElement<GetAllByUser> createGetAllByUser(GetAllByUser value) {
+        return new JAXBElement<GetAllByUser>(_GetAllByUser_QNAME, GetAllByUser.class, null, value);
     }
 
 }

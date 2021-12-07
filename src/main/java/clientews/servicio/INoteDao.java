@@ -75,12 +75,12 @@ public interface INoteDao {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateN", targetNamespace = "http://interfaces/", className = "clientews.servicio.UpdateN")
-    @ResponseWrapper(localName = "updateNResponse", targetNamespace = "http://interfaces/", className = "clientews.servicio.UpdateNResponse")
-    @Action(input = "http://interfaces/INoteDao/updateNRequest", output = "http://interfaces/INoteDao/updateNResponse")
-    public boolean updateN(
+    @RequestWrapper(localName = "deleteN", targetNamespace = "http://interfaces/", className = "clientews.servicio.DeleteN")
+    @ResponseWrapper(localName = "deleteNResponse", targetNamespace = "http://interfaces/", className = "clientews.servicio.DeleteNResponse")
+    @Action(input = "http://interfaces/INoteDao/deleteNRequest", output = "http://interfaces/INoteDao/deleteNResponse")
+    public boolean deleteN(
         @WebParam(name = "arg0", targetNamespace = "")
-        Note arg0);
+        int arg0);
 
     /**
      * 
@@ -90,11 +90,11 @@ public interface INoteDao {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteN", targetNamespace = "http://interfaces/", className = "clientews.servicio.DeleteN")
-    @ResponseWrapper(localName = "deleteNResponse", targetNamespace = "http://interfaces/", className = "clientews.servicio.DeleteNResponse")
-    @Action(input = "http://interfaces/INoteDao/deleteNRequest", output = "http://interfaces/INoteDao/deleteNResponse")
-    public boolean deleteN(
+    @RequestWrapper(localName = "updateN", targetNamespace = "http://interfaces/", className = "clientews.servicio.UpdateN")
+    @ResponseWrapper(localName = "updateNResponse", targetNamespace = "http://interfaces/", className = "clientews.servicio.UpdateNResponse")
+    @Action(input = "http://interfaces/INoteDao/updateNRequest", output = "http://interfaces/INoteDao/updateNResponse")
+    public boolean updateN(
         @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
+        Note arg0);
 
 }

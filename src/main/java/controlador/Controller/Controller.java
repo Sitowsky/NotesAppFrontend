@@ -4,16 +4,23 @@
  */
 package controlador.Controller;
 
+import clientews.servicio.INoteDao;
 import clientews.servicio.IUserDao;
+import clientews.servicio.Note;
+import clientews.servicio.NoteDaoService;
 import clientews.servicio.User;
 import clientews.servicio.UserDaoService;
 import java.util.List;
+import javax.swing.JComboBox;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import vistas.Login;
+import vistas.NotesEdit;
 import vistas.Usuarios;
 
 /**
@@ -22,8 +29,11 @@ import vistas.Usuarios;
  */
 public class Controller {
 
+    INoteDao no = new NoteDaoService().getNoteDaoPort();
+    Note n = new Note();
     IUserDao us = new UserDaoService().getUserDaoPort();
     User u = new User();
+    NotesEdit notes;
 
     public void llenaTabla(JTable jTable1, DefaultTableModel modelo) {
         List l = us.getAll();
@@ -126,6 +136,44 @@ public class Controller {
         }
     }
 
+    public void limpiarNote(JTextField titulo, JTextArea contenido) {
+        titulo.setText("");
+        contenido.setText("");
+    }
+
+    public void eliminarNota(JTextField idnote, JTextField titulo, JTextArea contenido, int id, JComboBox<String> combito) {
+        try {
+            List l = no.getAllN();
+            Note n = (Note) l.get(l.size() - 1);
+            if (n.getIdnote() >= Integer.parseInt(idnote.getText())) {
+                no.deleteN(Integer.parseInt(idnote.getText()));
+                JOptionPane.showMessageDialog(null, "La nota ha sido eliminada");
+                limpiarNote(titulo, contenido);
+                llenarID(idnote, id);
+                llenarLista(combito, id);
+            } else {
+                JOptionPane.showMessageDialog(null, "La nota no ha sido creada aún");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "La  no ha sido creada aún");
+        }
+    }
+
+    public void buscarNota(JTextField titulo, JTextField idnote, JTextArea contenido, int id, JComboBox<String> combito) {
+        try {
+            n.setIdnote(Integer.parseInt(idnote.getText()));
+            n.setContent(contenido.getText());
+            n.setIduser(id);
+            n.setTitle(titulo.getText());
+            no.addN(n);
+            JOptionPane.showMessageDialog(null, "Nota guardada");
+            limpiarNote(titulo, contenido);
+            llenarID(idnote, id);
+            llenarLista(combito, id);
+        } catch (Exception e) {
+        }
+    }
+
     public void verificarLogin(JTextField correo, JPasswordField contra, Login aThis) {
         try {
             if (correo.getText().equals("") && contra.getText().equals("")) {
@@ -137,8 +185,11 @@ public class Controller {
                 } else {
                     boolean val = us.verifyCredentials(correo.getText(), contra.getText());
                     if (val) {
+                        notes = new NotesEdit();
+                        notes.setVisible(true);
+                        notes.setUser(correo.getText());
                         aThis.setVisible(false);
-                        System.out.println("vista de notas con nombre");
+
                     } else {
                         JOptionPane.showMessageDialog(null, "Credenciales incorrectas");
                     }
@@ -146,5 +197,74 @@ public class Controller {
             }
         } catch (Exception e) {
         }
+    }
+
+    public int getIdUser(String correo) {
+        List l = us.getAll();
+        for (int i = 0; i < l.size(); i++) {
+            User u = (User) l.get(i);
+            if (u.getEmail().equals(correo)) {
+                return u.getIduser();
+            }
+        }
+        return 0;
+    }
+
+    public String getName(String correo) {
+        List l = us.getAll();
+        for (int i = 0; i < l.size(); i++) {
+            User u = (User) l.get(i);
+            if (u.getEmail().equals(correo)) {
+                return u.getName() + u.getLastname();
+            }
+        }
+        return "";
+    }
+
+    public void llenarID(JTextField txtIdnote, int id) {
+        List l = no.getAllN();
+        if (l.size() == 0) {
+            txtIdnote.setText("1");
+        } else {
+            Note n = (Note) l.get(l.size() - 1);
+            txtIdnote.setText(String.valueOf(n.getIdnote() + 1));
+        }
+    }
+
+    public void llenarLista(JComboBox<String> jList1, int id) {
+        List l = no.getAllByUser(id);
+        for (int i = 0; i < l.size(); i++) {
+            Note n = (Note) l.get(i);
+            jList1.addItem(String.valueOf(n.getIdnote()));
+        }
+    }
+
+    public void llenarNotas(JTextField txtTitle, JTextField txtIdnote, JTextArea txtContenido, int id, JComboBox<String> notas) {
+        if (notas.getItemCount() == 0) {
+            return;
+        } else {
+            List l = no.getAllByUser(id);
+            for (int i = 0; i < l.size(); i++) {
+                Note n = (Note) l.get(i);
+                if (n.getIdnote() == Integer.parseInt(notas.getSelectedItem().toString())) {
+                    txtTitle.setText(n.getTitle());
+                    txtContenido.setText(n.getContent());
+                    txtIdnote.setText(notas.getSelectedItem().toString());
+                    return;
+                }
+            }
+        }
+
+    }
+
+    public void modificarNota(JTextField titulo, JTextField idnote, JTextArea contenido, int id, JComboBox<String> qw) {
+        n.setIdnote(Integer.parseInt(idnote.getText()));
+        n.setContent(contenido.getText());
+        n.setIduser(id);
+        n.setTitle(titulo.getText());
+        no.updateN(n);
+        JOptionPane.showMessageDialog(null, "Nota actualizada");
+        limpiarNote(titulo, contenido);
+        llenarID(idnote, id);
     }
 }

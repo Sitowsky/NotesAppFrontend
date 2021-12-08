@@ -29,33 +29,6 @@ public interface INoteDao {
      * 
      * @param arg0
      * @return
-     *     returns java.util.List<clientews.servicio.Note>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllByUser", targetNamespace = "http://interfaces/", className = "clientews.servicio.GetAllByUser")
-    @ResponseWrapper(localName = "getAllByUserResponse", targetNamespace = "http://interfaces/", className = "clientews.servicio.GetAllByUserResponse")
-    @Action(input = "http://interfaces/INoteDao/getAllByUserRequest", output = "http://interfaces/INoteDao/getAllByUserResponse")
-    public List<Note> getAllByUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<clientews.servicio.Note>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllN", targetNamespace = "http://interfaces/", className = "clientews.servicio.GetAllN")
-    @ResponseWrapper(localName = "getAllNResponse", targetNamespace = "http://interfaces/", className = "clientews.servicio.GetAllNResponse")
-    @Action(input = "http://interfaces/INoteDao/getAllNRequest", output = "http://interfaces/INoteDao/getAllNResponse")
-    public List<Note> getAllN();
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns boolean
      */
     @WebMethod
@@ -84,6 +57,18 @@ public interface INoteDao {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<clientews.servicio.Note>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAllN", targetNamespace = "http://interfaces/", className = "clientews.servicio.GetAllN")
+    @ResponseWrapper(localName = "getAllNResponse", targetNamespace = "http://interfaces/", className = "clientews.servicio.GetAllNResponse")
+    @Action(input = "http://interfaces/INoteDao/getAllNRequest", output = "http://interfaces/INoteDao/getAllNResponse")
+    public List<Note> getAllN();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns boolean
@@ -96,5 +81,20 @@ public interface INoteDao {
     public boolean updateN(
         @WebParam(name = "arg0", targetNamespace = "")
         Note arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<clientews.servicio.Note>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAllByUser", targetNamespace = "http://interfaces/", className = "clientews.servicio.GetAllByUser")
+    @ResponseWrapper(localName = "getAllByUserResponse", targetNamespace = "http://interfaces/", className = "clientews.servicio.GetAllByUserResponse")
+    @Action(input = "http://interfaces/INoteDao/getAllByUserRequest", output = "http://interfaces/INoteDao/getAllByUserResponse")
+    public List<Note> getAllByUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
 }
